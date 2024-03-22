@@ -1,0 +1,3 @@
+open startup folder--> win+r---> shell:startup
+run python without console:-> start /B pythonw.exe fileName.py
+terminate all pythonw---> taskkill /IM pythonw.exe /F
