@@ -1,0 +1,5 @@
+pip install pyinstaller
+
+pyinstaller --onefile --noconsole pdf_maker.py  :without console
+
+pyinstaller --onefile pdf_maker.py              : with console
