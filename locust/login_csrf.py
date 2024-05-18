@@ -18,14 +18,27 @@ class MyTaskSet(SequentialTaskSet):
 
 
 
-
+    # update profile picture
     @task
     def t(self):
-        res=self.client.get("/accounts/my_orders/")
-        if res.status_code==200 and "Billing Name" in res.text:
-            print("pass")
-        else:
-            print('fail')
+        req = self.client.get('/accounts/edit_profile/', name='for probile')
+        self.csrf = req.cookies["csrftoken"]
+        print('login page stats =', req.status_code)
+
+        data = {
+            "first_name": "Brijkishor",
+            "last_name": "Gupta",
+            "phone_number": "986531",
+            "address_line_1": "123 Main Street",
+            "address_line_2": "Apt 101",
+            "city": "Cityville",
+            "state": "Stateville",
+            "country": "Countryland"
+        }
+
+        headers = {"X-CSRFToken": self.csrf}
+        res = self.client.post("/accounts/edit_profile/", data=data, headers=headers)
+        print("login status=", res.status_code)
 
 
 
