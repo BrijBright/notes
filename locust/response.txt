@@ -1,0 +1,22 @@
+about response
+---------------
+
+The number of attributes and methods available for the response object in the locust library may vary slightly based on the specific version and any customizations made. However, I can provide you with a general idea of the common attributes and methods available in a response object.
+
+Here are some common attributes and methods you might find in a response object in the locust library:
+
+Attributes:
+
+status_code: The HTTP status code of the response.
+text: The content of the response, usually in the form of a string.
+content: The raw content of the response, often in bytes.
+url: The URL of the response.
+cookies: A dictionary containing the cookies set by the server.
+Methods:
+
+raise_for_status(): Raises an exception if the response status code is not a success code (i.e., not in the 2xx range).
+json(): Parses the response content as JSON.
+success(): Marks the response as successful.
+failure(): Marks the response as a failure.
+raise_if_error(): Raises an exception if the response status code is not in the 2xx range.
+close(): Closes the response connection.
